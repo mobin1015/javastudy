@@ -5,21 +5,24 @@ public class MainClass {
   public static void method1() {
     
     // 월에 따른 계절 출력하기
-    int month = 4;
-    if(month>0 && month <3) {
-      System.out.println("겨울");
-    }else if(month<6) {
-      System.out.println("봄");
-    }else if(month<9) {
-      System.out.println("여름");
+    int month = 9;
+        
+    String season ;
+    
+    int mod = month % 12;
+    
+    if(mod <= 2) {
+      season= "겨울";
+    }else if(mod <=5) {
+      season= "봄";
+    }else if(mod  <= 8) {
+      season= "여름";
       
-    }else if(month<12) {
-      System.out.println("가을");
-    }else {
-      System.out.println("겨울");   
+    } else {
+      season= "가을";   
     }
     
-    
+    System.out.println(season);
   }
   
   public static void method2() {
@@ -30,21 +33,37 @@ public class MainClass {
     
     int score = 70;  // 점수
     int grade = 5;   // 학년
-    if(grade > 0 && grade <4) {
-     if(score >=60) {
-       System.out.println("합격");     }
-     else {
-       System.out.println("불합격");
-     }
-      
-    }else {
-      if(score >=70) {
-        System.out.println("합격");     }
-      else {
-        System.out.println("불합격");
-      }
+//    if(grade > 0 && grade <4) {
+//     if(score >=60) {
+//       System.out.println("합격");     }
+//     else {
+//       System.out.println("불합격");
+//     }
+//      
+//    }else {
+//      if(score >=70) {
+//        System.out.println("합격");     }
+//      else {
+//        System.out.println("불합격");
+//      }
+//    }
+    
+    // 합격 점수
+    int pass = 0;
+    if(grade >=1 && grade <=3) {
+      pass = 60;
+    } else if(grade >=4 && grade <=6) {
+      pass = 70;
     }
     
+    // 합격/불합격
+    String result = null;
+    if(score >= pass) {
+      result = "합격";
+    }else {
+      result = "불합격";
+    }
+    System.out.println(result);
     
   }
   
@@ -61,23 +80,52 @@ public class MainClass {
     }else if(nDay%7==1) {
       weekName ="금요일";
     }else if(nDay%7==2) {
-      weekName ="토";
+      weekName ="토요일";
     }else if(nDay%7==3) {
-      weekName ="일";
+      weekName ="일요일";
     }else if(nDay%7==4) {
-      weekName ="월";
+      weekName ="월요일";
     }else if(nDay%7==5) {
-      weekName ="화";
+      weekName ="화요일";
     }else if(nDay%7==6) {
-      weekName ="수";
+      weekName ="수요일";
     }
     System.out.println(weekName);
     
     
   }
   
+  public static void method4() {
+    // 메뉴에 따른 가격
+    // 아메리카노 : 1000
+    // 카페라떼   : 2000
+    // 밀크티     : 3000
+    // 기타       : 5000
+    
+    String order = "녹차";
+    int price = 0;
+
+    
+    switch(order) {
+    case "아메리카노":
+      price = 1000;
+      break;
+    case "카페라떼":
+      price = 2000;
+      break;
+    case "밀크티":
+      price = 3000;
+      break;
+      
+    default:
+      price = 5000;
+     
+  }
+    System.out.printf("주문하신 음료는 %s이고 가격은 %d원입니다.",order,price);
+  }
+  
   public static void main(String[] args) {
-    method3();
+    method4();
   }
 
 }
