@@ -39,9 +39,95 @@ public class MainClass {
     System.out.println(arr[2]);
     
   }
+  
+  public static void method2() {
+    
+    /*
+     * 배열 초기화
+     * 1. 배열을 선언할 때 초기화 값들을 전달할 수 있다.
+     * 2. 형식
+     *    1) int[] 배열이름 = new int [] {값1, 값2, 값3, ...} // 메소드로 배열값을 전달할 때는 이 방법 이용.
+     *    2) int[] 배열이름 = {값1, 값2, 값,3 ....}
+     */
+    
+    // 배열 선언 및 초기화
+    int[] arr = new int[]{10, 20, 30, 40, 50};
+    
+    // 배열 요소
+    System.out.println(arr[0]);
+    System.out.println(arr[1]);
+    System.out.println(arr[2]);
+    System.out.println(arr[3]);
+    System.out.println(arr[4]);
+  }
 
+  public static void method3() {
+    /*
+     * 배열 길이
+     * 1. 배열 요소의 개수를 의미한다.
+     * 2. 배열이 생성된 이후엔 수정할 수 없다.
+     * 3. 배열 길이 필드값
+     *    배열이름.length
+     *    
+     */
+    
+    // 배열 선언 및 초기화
+    int[] arr = {10, 20, 30, 40, 50};
+    
+    // 배열의 길이 확인
+    System.out.println(arr.length);
+    
+    // 배열과 for
+    for(int i=0; i<arr.length; i++) {
+      System.out.println(arr[i]);
+    }
+    
+    /*
+     * 배열의 길이를 늘이는 벙법
+     * 1. 새로운 배열을 만든다.
+     * 2. 기존 배열 요소를 모두 옮긴다.
+     * 3. 새로운 배열의 참조값을 가져온다.
+     */
+    
+ 
+  }
+  
+  public static void method4() {
+
+    
+   int[] a = new int[] {10, 20, 30};
+    
+    int[] b = new int[10];
+    
+    for(int i =0; i < a.length; i++) {
+      b[i] = a[i];
+    }
+    a = b;
+    
+    for(int i =0; i< a.length; i++) {
+      System.out.println(a[i]);
+    }
+  }
+  
+  public static void method5() {
+    
+    // advanced for
+    // for(변수 : 배열) {}
+    
+    int[] arr = new int[] {10, 20, 30, 40, 50};
+    
+    for(int number: arr) {
+      number += 1;   
+    }
+    
+    for(int i=0; i<arr.length; i++) {
+      System.out.println(arr[i]);   
+    }
+    
+  }
+  
   public static void main(String[] args) {
-    method1();
+    method5();
   }
 
 }
