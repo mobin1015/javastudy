@@ -9,7 +9,7 @@ public class test {
     int max =0;
     int answer =0;
     int count =0;
-    int []sides = {1, 2,2 };
+    int []sides = {1,2,3 };
     for(int i=0; i<sides.length; i++ ){
         if(sides[i] > max){
             max=sides[i];
@@ -17,11 +17,14 @@ public class test {
     }
       for(int i=0; i<sides.length; i++ ){
         if(sides[i] <= max){
-            count++;
+            
             hap +=sides[i];
         }
+        if(sides[i] == max) {
+          count ++;
+        }
     }
-    if(count >2) { hap -= max;}
+    if(count >1) { hap -= max;}
     
     if(hap > max ){
         answer =1;
