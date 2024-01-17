@@ -15,6 +15,7 @@ public class MainClass {
     // 디폴트 메소드 (구현 클래스 타입의 객체로 호출 가능하다)
     shape1.whoami("원");
     
+    
     // 클래스 메소드 (인터페이스로 호출 가능하다.)
     Shape.whoami2("원");
     
