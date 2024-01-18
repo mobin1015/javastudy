@@ -4,6 +4,7 @@ public class MainClass {
 
   public static void main(String[] args) {
     
+    try {
     // 10000원 가진 고객
     Customer customer = new Customer(10000);
     
@@ -17,8 +18,8 @@ public class MainClass {
     customer.addToCart(new Product("맛동산", 3000));
     customer.addToCart(new Product("양파링", 2000));
     customer.addToCart(new Product("홈런볼", 5000));
-//    customer.changeCart(1, new Product("오땅",1000));
-    customer.removeCart(0);
+    customer.changeCart(1, new Product("오땅",1000));
+    customer.removeCart(10);
     
     // 구매하면 영수증이 반환됨
     String receipt = customer.buy();
@@ -28,7 +29,11 @@ public class MainClass {
     
     // 고객 정보 확인
     System.out.println("고객이 가진 돈 :  " + customer.getMoney() + "원");
-    
+    }catch(Exception e) {
+      
+      System.out.println(e.getMessage());
+      e.printStackTrace();
+    }
   }
 
 }
