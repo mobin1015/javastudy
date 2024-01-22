@@ -150,7 +150,6 @@ public class MainClass {
    sc.close(); 
   }
   
-
   public static void method4() {
 
     // 5000원이 있는 통장(balance)에서 랜덤하게 출금하기
@@ -249,6 +248,51 @@ public class MainClass {
     //   몇 자리의 인증번호를 생성할까요? >>> 6
     //   생성된 6자리 인증번호는 Fa013b입니다.
     
+    System.out.println("몇 자리의 인증번호를 생성할까요?");
+    Scanner sc = new Scanner(System.in);
+    int num = sc.nextInt();
+
+    StringBuilder builder;
+    double rand[] = new double[3];
+    double idx ;
+    boolean x,y,z ;    
+    while(true) {
+      builder = new StringBuilder();
+      x =false ; 
+      y = false;
+      z = false;
+    for(int i=0; i <num; i++) {
+       rand[0] = Math.random()*25 +65;
+       rand[1] = Math.random()*25 +97;
+       rand[2] = Math.random()*10;
+       idx = Math.random()*3;
+       int a =(int)rand[(int) idx];
+       if( a< 11){
+         builder.append(a);
+       }else {
+         builder.append((char)a);
+       };    
+    }
+    
+    
+    for(int i=0; i< num; i++) {
+      if((int)builder.charAt(i) > 64 && (int)builder.charAt(i) < 91){
+        x =true;
+      }
+      if((int)builder.charAt(i) > 97 && (int)builder.charAt(i) < 123){
+        y =true;
+      }
+      if((int)builder.charAt(i) >= 0 && (int)builder.charAt(i) < 11){
+        z = true;
+      }
+    }
+ 
+    if((x =true) && (y = true)  && (z=true)) {
+      break;
+    }
+    }
+    
+     System.out.println(builder);
   }
 
   public static void method7() {
@@ -265,6 +309,31 @@ public class MainClass {
     // 입력 >>> 4500
     // 정답입니다. 총 5번만에 성공했습니다.
     
+    double rand = Math.random() *10000 +1;
+    int num= (int)rand;
+    int count =0;
+    Scanner sc = new Scanner(System.in);
+    int inPut;
+    System.out.println("숫자를 맞춰보세요.");
+    while(true) {
+      System.out.println("입력 >>>");
+      inPut= sc.nextInt();
+      
+      if(inPut > num ) {
+        count ++;
+        System.out.println("DOWN!");
+      }
+      else if(inPut < num ){
+        count ++;
+        System.out.println("UP!");
+      }
+      else {
+        System.out.printf("정답입니다. 총 %d만에 성공했습니다." , count);
+        break;} 
+     
+      
+    }
+    sc.close();
     
   }
 
@@ -327,7 +396,7 @@ public class MainClass {
 //    }
     
     // map을 for문으로 돌려서 확인하기
-     method5(); 
+     method7(); 
 
    }
 
