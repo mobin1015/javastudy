@@ -258,7 +258,7 @@ public class MainClass {
     boolean x,y,z ;    
     while(true) {
       builder = new StringBuilder();
-      x =false ; 
+      x = false ; 
       y = false;
       z = false;
     for(int i=0; i <num; i++) {
@@ -351,6 +351,52 @@ public class MainClass {
     // 7 : ################## 18
     // 8 : ####### 7
     // 9 : ########### 11
+     int a;
+     int b[] = new int[10];
+    for(int i=0; i< 100; i++) {
+      double random = Math.random() * 10;
+      a = (int)random;
+      switch(a) {
+      case 0:
+        b[0] ++;
+        break;
+      case 1:
+        b[1] ++;
+        break;
+      case 2:
+        b[2] ++;
+        break;
+      case 3:
+        b[3] ++;
+        break;
+      case 4:
+        b[4] ++;
+        break;
+      case 5:
+        b[5] ++;
+        break;
+      case 6:
+        b[6] ++;
+        break;
+      case 7:
+        b[7] ++;
+        break;
+      case 8:
+        b[8] ++;
+        break;
+      case 9:
+        b[9] ++;
+        break;
+      }
+    }
+    
+    for(int i=0; i<10; i++) {
+      System.out.print(i +" : ");
+      for(int j=0; j<b[i]; j++) {
+        System.out.print("#");
+      }
+      System.out.println(" " +b[i]);
+    }
     
     
   }
@@ -383,8 +429,36 @@ public class MainClass {
     //   8 17  5 12  7
     //  16 22 18 24 23
     
+    int [][]a= new int[5][5];
+    int num=1;
+    int temp;
+    int x;
+    int y;
+    for(int i=0; i<5; i++) {
+      for(int j=0; j<5; j++) {
+        a[i][j] = num++; 
+      }
+    }
+    
+    for(int i=0; i<5; i++) {
+      for(int j=0; j<5; j++) {
+        x =(int)(Math.random()*5);
+        y =(int)(Math.random()*5);
+        
+        temp = a[i][j]; 
+        a[i][j] = a[x][y];
+        a[x][y] = temp;
+        
+      }
+    }
+    
+    for(int i=0; i<5; i++) {
+      for(int j=0; j<5; j++) {
+        System.out.printf("%3d",a[i][j]);
+      }
+      System.out.println();
+    }
   }
-  
   
   
   public static void main(String[] args) {
@@ -396,7 +470,8 @@ public class MainClass {
 //    }
     
     // map을 for문으로 돌려서 확인하기
-     method7(); 
+     method9(); 
+     
 
    }
 

@@ -7,19 +7,17 @@ public class LottoMain {
 
   public static void main(String[] args) {
     
-    try {
+      try {
       
       Lotto lotto = new Lotto();
       
       List<String> papers = lotto.generateLotto(lotto.buyLotto());
       
       for(int i = 0, size = papers.size(); i < size; i++) {
-        System.out.println(papers.get(i));
-      }
-
-    } catch (Exception e) {
-      System.out.println(e.getMessage());
-    }
+      System.out.printf("%3s",papers.get(i)); }
+      
+      } catch (Exception e) { System.out.println(e.getMessage()); }
+     
 
   }
 

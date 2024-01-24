@@ -16,12 +16,25 @@ public class Lotto {
    */
   public int buyLotto() throws RuntimeException {
     
-    Scanner sc = new Scanner(System.in);
-    
+      Scanner sc = new Scanner(System.in);
     /* 여기에 구현 */
-    
-    return 0;  // 리턴 값 바꿀 것
-    
+      
+      System.out.println("금액 투입 >>>");
+      int money = sc.nextInt();
+  
+      if (money <1000) {
+        money =0;
+        throw new RuntimeException("최소 구매 비용은 1000");
+      }
+      
+      if (money >100000) {
+        money=0;
+        throw new RuntimeException("최대 구매 비용은 100000");
+      }
+      else {
+        money = money - (money%1000);
+      }
+      return money;  // 리턴 값 바꿀 것
   }
   
   /**
@@ -60,6 +73,21 @@ public class Lotto {
     List<String> papers = new ArrayList<String>();
     
     /* 여기에 구현 */
+    int num=1;
+    for(int i=1; i <= money/1000; i++ ) {
+      papers.add("0"+Integer.toString((num++)) + " : ");
+      for(int j=0; j<5; j++) {
+        papers.add(Integer.toString((int)(Math.random() *43 +1 )) + " " );
+      }
+      papers.add("\n");
+   
+      if(i%5==0) {
+        papers.add("\n");
+      }
+      if(num>5) {
+        num=1;
+      }
+    } 
        
     return papers;
     
