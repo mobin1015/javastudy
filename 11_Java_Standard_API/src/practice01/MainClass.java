@@ -356,38 +356,7 @@ public class MainClass {
     for(int i=0; i< 100; i++) {
       double random = Math.random() * 10;
       a = (int)random;
-      switch(a) {
-      case 0:
-        b[0] ++;
-        break;
-      case 1:
-        b[1] ++;
-        break;
-      case 2:
-        b[2] ++;
-        break;
-      case 3:
-        b[3] ++;
-        break;
-      case 4:
-        b[4] ++;
-        break;
-      case 5:
-        b[5] ++;
-        break;
-      case 6:
-        b[6] ++;
-        break;
-      case 7:
-        b[7] ++;
-        break;
-      case 8:
-        b[8] ++;
-        break;
-      case 9:
-        b[9] ++;
-        break;
-      }
+      b[a] ++;
     }
     
     for(int i=0; i<10; i++) {
@@ -470,7 +439,7 @@ public class MainClass {
 //    }
     
     // map을 for문으로 돌려서 확인하기
-     method9(); 
+     method8(); 
      
 
    }
